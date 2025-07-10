@@ -18,9 +18,9 @@ declare global {
   var useCallback: typeof _useCallback;
   var useMemo: typeof _useMemo;
   var useState: typeof _useState;
-  var useSafeState: typeof _useSafeState;
+  var useSafeState: typeof useSafeStateFunction;
+  var useSafeUpdate: typeof useSafeUpdateFunction;
   var useMountedRef: typeof useMountedRefFunction;
-  var useSafeUpdate: typeof _useSafeUpdate;
 }
 
 globalThis.useId = _useId;
@@ -32,37 +32,23 @@ globalThis.useMemo = _useMemo;
 globalThis.useState = _useState;
 
 /********************************************************************************************************************
- * useSafeUpdate
- * ******************************************************************************************************************/
-
-function _useSafeUpdate() {
-  const isMounted = useMountedRef();
-
-  return _useCallback((callback: () => void) => {
-    if (isMounted.current) {
-      callback();
-    } else {
-      if (__DEV__) {
-        console.warn('unmounted update');
-      }
-    }
-  }, []);
-}
-
-globalThis.useSafeUpdate = _useSafeUpdate;
-
-/********************************************************************************************************************
  * useSafeState
  * ******************************************************************************************************************/
-function _useSafeState<S>(initialState: S | (() => S)): [S, Dispatch<SetStateAction<S>>];
-function _useSafeState<S = undefined>(): [S | undefined, Dispatch<SetStateAction<S | undefined>>];
-function _useSafeState<S>(initialState?: S | (() => S)): [S | undefined, Dispatch<SetStateAction<S | undefined>>] {
+function useSafeStateFunction<S>(
+  initialState: S | (() => S),
+): [S, Dispatch<SetStateAction<S>>];
+function useSafeStateFunction<S = undefined>(): [
+  S | undefined,
+  Dispatch<SetStateAction<S | undefined>>,
+];
+function useSafeStateFunction<S>(
+  initialState?: S | (() => S),
+): [S | undefined, Dispatch<SetStateAction<S | undefined>>] {
   const isMounted = useMountedRef();
   const [value, setValue] = _useState(initialState);
 
-  useEffect(() => {
+  _useEffect(() => {
     isMounted.current = true;
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const safeSetValue = _useCallback((newValue: any) => {
@@ -78,7 +64,27 @@ function _useSafeState<S>(initialState?: S | (() => S)): [S | undefined, Dispatc
   return [value, safeSetValue];
 }
 
-globalThis.useSafeState = _useSafeState;
+globalThis.useSafeState = useSafeStateFunction;
+
+/********************************************************************************************************************
+ * useSafeUpdate
+ * ******************************************************************************************************************/
+
+function useSafeUpdateFunction() {
+  const isMounted = useMountedRef();
+
+  return _useCallback((callback: () => void) => {
+    if (isMounted.current) {
+      callback();
+    } else {
+      if (__DEV__) {
+        console.warn('unmounted update');
+      }
+    }
+  }, []);
+}
+
+globalThis.useSafeUpdate = useSafeUpdateFunction;
 
 /********************************************************************************************************************
  * useMounted
