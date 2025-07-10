@@ -4,9 +4,9 @@ NAS 오퍼월 React Native용 SDK 및 예제 프로그램을 제공합니다.
 ![](/docs/img/popup_offerwall.png)
 
 ## 🔗 다른 플렛폼 SDK
-- [`Android SDK`](https://github.com/mafin-global/nas-offerwall-android)
-- [`iOS SDK`](https://github.com/mafin-global/nas-offerwall-ios)
-- [`Unity SDK`](https://github.com/mafin-global/nas-offerwall-unity)
+- [Android SDK](https://github.com/mafin-global/nas-offerwall-android)
+- [iOS SDK](https://github.com/mafin-global/nas-offerwall-ios)
+- [Unity SDK](https://github.com/mafin-global/nas-offerwall-unity)
 
 ## 📝 업데이트
 - `v1.0.1`
