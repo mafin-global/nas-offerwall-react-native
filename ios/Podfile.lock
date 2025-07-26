@@ -8,7 +8,7 @@ PODS:
   - hermes-engine (0.80.1):
     - hermes-engine/Pre-built (= 0.80.1)
   - hermes-engine/Pre-built (0.80.1)
-  - NasOfferWallSdkReactNative (1.0.1):
+  - NasOfferWallSdkReactNative (1.0.2):
     - boost
     - DoubleConversion
     - fast_float
@@ -2553,7 +2553,7 @@ SPEC CHECKSUMS:
   fmt: a40bb5bd0294ea969aaaba240a927bd33d878cdd
   glog: 5683914934d5b6e4240e497e0f4a3b42d1854183
   hermes-engine: 4f07404533b808de66cf48ac4200463068d0e95a
-  NasOfferWallSdkReactNative: c011dac9d11fd26188098b2ef083284e540e72ec
+  NasOfferWallSdkReactNative: 8413f79b1d0cc42b77392e45f1eca2beca529ee4
   RCT-Folly: 846fda9475e61ec7bcbf8a3fe81edfcaeb090669
   RCTDeprecation: efa5010912100e944a7ac9a93a157e1def1988fe
   RCTRequired: bbc4cf999ddc4a4b076e076c74dd1d39d0254630

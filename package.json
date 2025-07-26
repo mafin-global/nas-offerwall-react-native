@@ -37,7 +37,7 @@
     "@types/react-test-renderer": "^19.1.0",
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
-    "nas-offerwall-sdk-react-native": "^1.0.1",
+    "nas-offerwall-sdk-react-native": "^1.0.2",
     "prettier": "2.8.8",
     "react-native-safe-area-context": "^5.5.1",
     "react-native-screens": "^4.11.1",

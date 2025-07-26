@@ -9,6 +9,9 @@ NAS 오퍼월 React Native용 SDK 및 예제 프로그램을 제공합니다.
 - [Unity SDK](https://github.com/mafin-global/nas-offerwall-unity)
 
 ## 📝 업데이트
+- `v1.0.2`
+  - 초기화 함수(개발자 서버에서 적립금 관리) 호출 시 앱이 종료되는 버그가 수정되었습니다.
+
 - `v1.0.1`
   - 버그가 수정되었습니다.
 
