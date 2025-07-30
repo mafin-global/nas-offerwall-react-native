@@ -206,6 +206,8 @@ NasWall.initializeDeveloperServer(appKey, userId, testMode).then(() => {
 ### 🔹 *팝업 오퍼월*
 팝업 오퍼월(전체 화면)을 표시합니다.
 
+*❗ 시뮬레이터에서는 참여 시 오류가 발생합니다.*
+
 ```typescript
 function openPopupOfferWall(
   onClose?: () => void
